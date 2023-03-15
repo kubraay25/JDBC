@@ -1,0 +1,52 @@
+
+
+      **************************   JDBC    **********************************
+
+      Java DataBase Connectivity
+
+ --> JDBC java programlama dilinde yazilmis uygulamalarin veritabani ile etkilesime girmesini
+ saglayan bir uygulama programlama arayuzudur
+
+ --> databace den intellij yardimiyla baglanti kurarak sorgulama yapmak ye da veri cekmek manasina gelir
+
+ --> (java aplication + DataBase) birlesimidir (priz ve fish gibi dusunulebilir)
+
+ --> DataBase Drivers : yapmamiz gereken oncelikle bir "driver" tanimlamaktir
+     hangi programi kullaniyorsam onun kodunu yazacagim yani
+     Class.forName(className:"org.postgresql.Driver");
+
+ --> DRIVER: bu arayuz veritabani sunucusu ile olan iletisimi idare eder
+     Genellikle bu nesneyi yoneten DriverManager nesnesi uzerinden erisim yapilir
+
+ --> CONNECTION: bu arayuz bir veritabani ile iletisim kurmak icin tum yontemleri icerir
+                 iletisim baglamidir(database'e baglanmak icin kullaniriz)
+
+               JAVA APPLİCATION
+                  JDBC API
+               Driver Manager
+                 JDBC DRIVER
+
+ --> DriverManager: Veritabani suruculerinin bir listesini yonetir
+                    Java uygulamasindan gelen baglanti istekleri ile uygun veri tabani
+                    surucusunu eslestirir ve baglanti olusturur
+
+--> Statement: bu arayuz ile sql ifadeleri veritabanina iletilir
+
+ --> ResultSet:(data cekmek) JDBC kullanarak veri cekme islemi sonrasinda veri listelemek icin
+ bu sinif kullanilir. SQL sorgusu calistirildiktan sonra veritabanindan alinan
+ verileri saklar. Verilerin arasinda gitmemizi saglar
+     Veriler uzerinde dolasmak icin next,first, last, previous,absolute gibi
+ methodlara sahiptir
+
+   kodlarla gosterecek olusrak:
+
+   ResultSet data = st.executeQuery(sql:"select * from students) seklindedir
+
+
+
+
+
+
+
+
+
