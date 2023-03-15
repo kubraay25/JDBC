@@ -8,3 +8,7 @@ result --> sonuc :rizalt
 execute --> uygulama :eksekiyuut
 lokalhost --> yerel ana bilgisayar :lokılhöst
 statement --> ifade :sıteytmınt
+install -->
+accept -->
+restart
+reload
