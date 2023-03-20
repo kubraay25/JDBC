@@ -1,0 +1,26 @@
+
+          *********  DB Browser Eklentisi Olusturma *********
+
+             1.file
+               settings
+               editor
+               pulugins
+               marketplace kismina
+               database navigator
+               install
+               accept
+               restart IDE
+               ve intellije restart yapmis olduk en sol kenarda DB Browser'i goruruz
+
+           --> DB Browser
+               ilk bastaki "+"(New Connection) kismina tiklariz
+               burda bize hangi programla baglanmak istersiniz diye soruyor
+               PostgreSQL'i seceriz
+               database ismi, passwordu, user'i gireriz
+               test connection yapip kontrol ederiz yesil yanarsa sorunsuz hallettigimiz manasina gelir
+               sonra "ok" deyip kapatiriz
+               cikan tabloda Consoles tikla
+               Connection sec
+               schemas
+               burda yuklu olan tablolarimizi select yaparak gorebiliriz
+               public yapiyoruz ve tablolarimizi goruyoruz

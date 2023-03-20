@@ -20,6 +20,8 @@ public class Query05 {
             String sql01= "insert into ogrenciler values (304, 'Sena Can', 12, 'K')";
 
             //guncelleme yapacagimiz icin ""executeUpdate" komutunu kullanacagiz
+            //.burda bilerek ResultSet kullanmadik cunku karsi taraftan bir data alacagimiz zaman kullaniriz
+            //yani sorgu gondericez karsi tarafa bir cevap gelirse ResultSeti kullanacagiz
           int s1 = st.executeUpdate(sql01);
           System.out.println(s1 + " satir database eklendi");
 
@@ -29,6 +31,8 @@ public class Query05 {
 
           /*
         //1. YOL
+        //asagidaki gibi birden fazla data gonderebiliriz
+
         String [] veri = {"insert into ogrenciler values (510, 'Sena Can', 12, 'K')",
                "insert into ogrenciler values (511, 'Sena Can', 12, 'K')",
              "insert into ogrenciler values (522, 'Sena Can', 12, 'K')"};
@@ -46,7 +50,7 @@ public class Query05 {
                     "insert into ogrenciler values (622, 'Sena Can', 12, 'K')"};
 
            for(String each: veri){
-            st.addBatch(each);          //yukarıdaki dataların gepsini birleştirir
+            st.addBatch(each);          //yukarıdaki dataların hepsini birleştirir
         }
            st.executeBatch();              //Dataları tek seferde gönderir.
 

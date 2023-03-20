@@ -4,22 +4,112 @@
 
       Java DataBase Connectivity
 
+      ************************** baslangic **********************************
+      1.pgAdminde "jdbc" diye bir database olusturduk
+      (database-->create--->database-->jdbc)
+
+      2.tablo olusturdum listeledim.
+
+      3.İntellij'e geri donduk,proje olusturduk
+      (file-->new-->project-->jdbc)
+
+      4."pom.xml" dosyasindan bahsetti
+      -->butun projelerde bir tane bu dosyadan bulunur
+      -->projenin kalbi olarak adlandirilir
+      -->bizim icin onemli olan "</properties> ve </project" arasina yazacagimiz kisimdir
+
+      5.en alttaki "</properties> ve </project" arasini acariz
+      -->bu kisimda yapacagimiz seyin adi "postgresql"i tanimlamaktir
+      -->bu ikisinin arasindaki boslukta sag kilik yapiyoruz ve "<dependencies>"i seciyoruz
+      -->sonra ikisinin ortasindan enter yapip arasina "adress" yaziyoruz
+      -->adresede su sekilde gidiyoruz:bu adres "framwork"ümüze dependencies ekledigimiz kisimdir
+       google-->MVN Repository-->postgresql-->PostgreSQL JDBC Driver-->versiyon seciyoruz
+       en güncel olan versiyon(42.5.4)-->en alttaki kod yazan bolumu kopyaliyorum-->intellije geri donuyorum
+       acmıs oldugum iki "<dependencies>"in ortasina yapistiriyorum
+      -->alti kirmizi yaniyor olabilir:yan taraftaki "maven" kismina basti ve "maven" klasorlerini olusturmus oldu yan tarafta
+
+      6.artik main'in altindaki "java" klasorunde "query01" adinda bir class olusturuyoruz
+
+      7.main method olusturuyorum
+
+      8.driver tanimlarim ve exception'imi atarim
+       Class.forName("org.postgresql.Driver");
+
+      9.database'ime baglanirim ve exception'imi atarim
+        Connection con = DriverManager.getConnection(
+                        "jdbc:postgresql://localhost:5432/jdbj",
+                        "postgres",
+                        "6789");
+
+      10.statement olusturuyorum
+        Statement st = con.createStatement();
+
+      11.verileri alip islem yapmak icin resultSeti olusturum
+      burdan database'e baglanip bilgilerimi cekiyorum
+
+      12.bundan sonra ilk test surecimiz baslayacaktir
+**************************** pom.xml **************************
+
+      <?xml version="1.0" encoding="UTF-8"?>
+      <project xmlns="http://maven.apache.org/POM/4.0.0"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+          <modelVersion>4.0.0</modelVersion>
+
+          <groupId>org.example</groupId>
+          <artifactId>jbdc</artifactId>
+          <version>1.0-SNAPSHOT</version>
+
+          <properties>
+              <maven.compiler.source>11</maven.compiler.source>
+              <maven.compiler.target>11</maven.compiler.target>
+              <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+          </properties>
+      <dependencies>
+          <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+          <dependency>
+              <groupId>org.postgresql</groupId>
+              <artifactId>postgresql</artifactId>
+              <version>42.5.1</version>
+          </dependency>
+
+      </dependencies>
+
+
+      </project>
+
+ *******************************************************************************
+
+
+ --> Bir qa olarak ilk testimizi "jbdc" araciligi ile yapmis olacagiz
+
+ --> java kodlarini yazarak database'den bilgi cekecegiz,baglanti kuracagiz
+
  --> JDBC java programlama dilinde yazilmis uygulamalarin veritabani ile etkilesime girmesini
  saglayan bir uygulama programlama arayuzudur
 
- --> databace den intellij yardimiyla baglanti kurarak sorgulama yapmak ye da veri cekmek manasina gelir
+ --> databace'den intellij yardimiyla baglanti kurarak sorgulama yapmak ye da veri cekmek manasina gelir
 
  --> (java aplication + DataBase) birlesimidir (priz ve fish gibi dusunulebilir)
 
- --> DataBase Drivers : yapmamiz gereken oncelikle bir "driver" tanimlamaktir
-     hangi programi kullaniyorsam onun kodunu yazacagim yani
-     Class.forName(className:"org.postgresql.Driver");
+
+        KOD YAZMAYA BASLAMADAN ONCE ASAGIDAKI İSLEMLERI YAPARIZ
+
+ 1.) DataBase Drivers : yapmamiz gereken oncelikle bir "driver" tanimlamaktir
+     hangi programi kullaniyorsam onun kodunu yazacagim yani asagidaki kodu
+
+   ************* Class.forName(className:"org.postgresql.Driver"); **************************
 
  --> DRIVER: bu arayuz veritabani sunucusu ile olan iletisimi idare eder
      Genellikle bu nesneyi yoneten DriverManager nesnesi uzerinden erisim yapilir
 
- --> CONNECTION: bu arayuz bir veritabani ile iletisim kurmak icin tum yontemleri icerir
+ 2.) CONNECTION: bu arayuz bir veritabani ile iletisim kurmak icin tum yontemleri icerir
                  iletisim baglamidir(database'e baglanmak icin kullaniriz)
+
+                  Connection con = DriverManager.getConnection(
+                                 "jdbc:postgresql://localhost:5432/jdbj",  pgAdmindeki
+                                 "postgres",
+                                 "6789");    parolamiz
 
                JAVA APPLİCATION
                   JDBC API
@@ -30,7 +120,8 @@
                     Java uygulamasindan gelen baglanti istekleri ile uygun veri tabani
                     surucusunu eslestirir ve baglanti olusturur
 
---> Statement: bu arayuz ile sql ifadeleri veritabanina iletilir
+ 3.) Statement: bu arayuz ile sql ifadeleri veritabanina iletilir
+      Statement st = con.createStatement();
 
  --> ResultSet:(data cekmek) JDBC kullanarak veri cekme islemi sonrasinda veri listelemek icin
  bu sinif kullanilir. SQL sorgusu calistirildiktan sonra veritabanindan alinan
@@ -43,29 +134,6 @@
    ResultSet data = st.executeQuery(sql:"select * from students) seklindedir
 
 
- --> file
-     settings
-     editor
-     pulugins
-     marketplace kismina
-     database navigator
-     install
-     accept
-     restart
-     ve intellije restart yapmis olduk en sol kenarda DB Browser'i goruruz
-
- --> DB Browser
-     ilk bastaki "+"(New Connection) kismina tiklariz
-     burda bize hangi programla baglanmak istersiniz diye soruyor
-     PostgreSQL i seceriz
-     database ismi, passwordu, user' gireriz
-     test connection yapip kontrol ederiz yesil yanarsa sorunsuz hallettigimşz manasina gelir
-     sonra "ok" deyip kapatiriz
-     cikan tabloda Consoles tikla
-     Connection sec
-     schemas
-     burda yuklu olan tablolarimizi select yaparak gorebiliriz
-     public yapiyoruz ve tablolarimizi goruyoruz
 
 
 

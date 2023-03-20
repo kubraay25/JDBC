@@ -42,16 +42,17 @@ public class Query01 {
         ResultSet veri = st.executeQuery("select * from ogrenciler");
 
         /*  --> Asagida while'in icine (veri.next) deyip butun datalarimi pgAdminimden cekiyorum
-            --> getString kullaniyorum cunku sutundaki datalarim stringi ifadeler
-            --> getInt kullaniyorum cunku o sutundaki ifadeler sayili ifadeler
+            --> getString kullaniyorum cunku sutundaki datalarim stringli ifadelerdir
+            --> getInt kullaniyorum cunku o sutundaki ifadeler sayili ifadelerdir
             --> "columindex" icerisinde belirttigimiz rakam kacinci sutun oldugunu gosterir
-            --> "columindex" buraya kacinci sutun yazabilecegimiz gibi sutunun adinida yazabiliriz
-            --> Burada "veri" olarak tanimladigimiz pgAdminde tablomuzda olan tum bilgilerimizdir
+            --> "columindex" kismina kacinci sutun oldugunu yazabilecegimiz gibi sutunun adinida yazabiliriz
+            --> Burada "veri" olarak tanimladigimiz pgAdminde'ki tablomuzda olan tum bilgilerdir
             --> Her "next" dedigimizde satirdaki bilgileri topladiktan sonra diger satirdaki
             bilgileri toplamaya gecer ve butun bilgileri bu sekilde toplar
             --> printf: '\n' yeni bir satıra geçmek için kullanılır.
          */
 
+        // datalari yazdirdigimiz kisimdir
         while (veri.next()) {
 
             System.out.println('\n' + veri.getInt(1)+" "

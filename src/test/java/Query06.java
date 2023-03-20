@@ -28,7 +28,9 @@ public class Query06 {
       /* PreparedStatement
          sorgunun birden fazla kez yürütülmesi gerektiğinde özellikle yararlıdır,
          çünkü sorgunun derlenmesi yalnızca bir kez gerçekleştirilir ve daha sonra birden
-         fazla kez yürütülür. Bu da ağ trafiği ve sunucu yükü açısından tasarruf sağlar.*/
+         fazla kez yürütülür. Bu da ağ trafiği ve sunucu yükü açısından tasarruf sağlar.
+
+         statement te her defasinda sorguyu tekrardan yazariz */
 
       PreparedStatement ps = con.prepareStatement("insert into ogrenciler values (?, ?, ?, ?)");
       ps.setInt(1, 951);

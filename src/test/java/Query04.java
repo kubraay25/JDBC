@@ -7,7 +7,7 @@ public class Query04 {
     ResultSetMetaData:Bu arayüzü kullanarak, ResultSet hakkında daha fazla bilgi alabiliriz.
                       Her ResultSet nesnesi,bir ResultSetMetaData nesnesiyle ilişkilendirilir.
                       Bu  nesne,  sütunun  veri  türü,  sütun  adı,  sütun  sayısı,  tablo  adı,
-                      şema  adı  gibi  sütun  özelliklerinin  ayrıntılarına  verir.
+                      şema  adı  gibi  sütun  özelliklerinin  ayrıntılarına kadar  verir.
                       ResultSet'in,  getMetaData() yöntemini kullanarak ResultSetMetaData nesnesini alabiliriz
      */
 
@@ -22,6 +22,7 @@ public class Query04 {
         Statement st = con.createStatement();
         ResultSet rs= st.executeQuery(("select * from ogrenciler"));
 
+        //tablo ile ilgili bize extra bilgiler verir
         ResultSetMetaData rsmd=rs.getMetaData();
 
         /* getColumnName(1)--> bize 1.sutunun ismini verecektir

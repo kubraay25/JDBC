@@ -26,8 +26,8 @@ public class Query03 {
 
         //Soru:1 "workers" adında bir table oluşturup "worker_id, worker_name, worker_salary" sütunlarını ekleyin.
 
-        //String sql01 = "Create Table workers (worker_id int, worker_name varchar (20), worker_salary int)";
-        //st.execute(sql01);
+        String sql01 = "Create Table workers (worker_id int, worker_name varchar (20), worker_salary int)";
+        st.execute(sql01);
 
         /* Soru:2 Tabloya worker_address sutunu ekleyelim
                   bu kodu calistirirken yukariyi yoruma aliyorum
@@ -39,8 +39,8 @@ public class Query03 {
         //st.execute(sql02);
 
         //Soru: Workers tablosunu silelim
-          String sql03 = "Drop Table workers";
-          st.execute(sql03);
+         // String sql03 = "Drop Table workers";
+         // st.execute(sql03);
 
 
     }
