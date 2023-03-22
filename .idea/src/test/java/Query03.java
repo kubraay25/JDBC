@@ -18,6 +18,13 @@ public class Query03 {
 
         /*
         Bugun burada "execute" komutunu kullandik
+        execute() : Query’nin döndüğü ilk obje bir ResultSet objesi
+ise eğer, true döner. Eğer sorgu bir veya daha fazla
+ResultSet dönecekse bu metod kullanılmalıdır. Dönen
+ResultSet objelerini tekrarlamalı bir şekilde almak gerekir.
+
+
+
            execute() -> create, drop, alter table (DDL) icin kullanılır.
            con.close();
            st.close();

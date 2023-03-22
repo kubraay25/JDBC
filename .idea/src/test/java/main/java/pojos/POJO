@@ -1,0 +1,14 @@
+
+POJO (Plain Old Java Object)
+
+POJO, "Plain Old Java Object" kısaltmasıdır ve
+Java programlama dilinde kullanılır.
+POJO'lar basit bir sınıf yapısına sahiptir ve
+genellikle nesne yönelimli programlamada (OOP) veri
+taşımak veya depolamak için kullanılır. POJO'lar,
+özelliklerini (fields), getter ve setter methodları
+gibi basit işlevleri içeren standart bir Java sınıfıdır.
+Diğer bir deyişle, POJO'lar, Java'da verileri
+temsil etmek için kullanılan basit, özelleştirilmemiş sınıflardır.
+
+bu klasi kullanarak database mize veri gonderecegiz

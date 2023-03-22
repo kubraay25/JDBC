@@ -6,7 +6,6 @@ public class Urun {
     private String isim;
     private double fiyat;
 
-
     public int getId() {
         return id;
     }

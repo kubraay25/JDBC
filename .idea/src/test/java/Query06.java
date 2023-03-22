@@ -29,8 +29,13 @@ public class Query06 {
          sorgunun birden fazla kez yürütülmesi gerektiğinde özellikle yararlıdır,
          çünkü sorgunun derlenmesi yalnızca bir kez gerçekleştirilir ve daha sonra birden
          fazla kez yürütülür. Bu da ağ trafiği ve sunucu yükü açısından tasarruf sağlar.
+         statement te her defasinda sorguyu tekrardan yazariz
 
-         statement te her defasinda sorguyu tekrardan yazariz */
+      CallableStatement : (PreparedStatement sınıfından
+                           extend eder) Hem input hem output parametrelerine sahip
+                           olma ihtimali olan stored procedure’leri çalıştırmak için kullanılır.*/
+
+
 
       PreparedStatement ps = con.prepareStatement("insert into ogrenciler values (?, ?, ?, ?)");
       ps.setInt(1, 951);

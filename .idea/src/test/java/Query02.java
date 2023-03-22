@@ -38,7 +38,7 @@ public class Query02 {
         }
 
         //soru:2 "region_id"nin 2'den buyuk oldugu "country_id", "country_name" degerlerini cagirin
-
+        // executeQuery() : Tek bir ResultSet objesi döner.
         String sql02="select country_name,country_id from countries where region_id>2";
 
         ResultSet veri02=st.executeQuery(sql02);

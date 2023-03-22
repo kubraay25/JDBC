@@ -9,6 +9,12 @@ public class Query04 {
                       Bu  nesne,  sütunun  veri  türü,  sütun  adı,  sütun  sayısı,  tablo  adı,
                       şema  adı  gibi  sütun  özelliklerinin  ayrıntılarına kadar  verir.
                       ResultSet'in,  getMetaData() yöntemini kullanarak ResultSetMetaData nesnesini alabiliriz
+
+    ResultSetMetaData:JDBC (Java Database Connectivity) API'nin bir parçasıdır ve veritabanından veri
+                      çekmek için kullanılır. Bir ResultSet nesnesi oluşturulduktan sonra, bu arayüz
+                      üzerinden sütun adlarına, türlerine ve diğer özelliklerine erişebilirsiniz.
+                      Bu özellikler, sonuç kümesini işlemek ve sonuçları uygun şekilde göstermek için kullanılabilir.
+
      */
 
     public static void main(String[] args) throws ClassNotFoundException, SQLException {

@@ -1,4 +1,5 @@
-package pojos;
+import pojos.Urun;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,13 +14,21 @@ public class Query07 {
                 "postgres",
                 "6789");
         Statement st = con.createStatement();
-        //Connection:uzerine sag tikla "Auto Commit"i aktiflestir otomatik gör bazi şeylei
-        // SORU: Urunler adında bir tablo olusturalım (id int, isim varchar(10), fiyat int)
+
+        //Connection:uzerine sag tikla "Auto Commit"i aktiflestir otomatik gör bazi şeyleri
+
+        //Example: Urunler adında bir tablo olusturalım (id int, isim varchar(10), fiyat int)
+        //burda yaptigimiz islem karsi tarafa data gondermek dolayisiyla "resultSet" kullanmiyoruz
+        //karsi taraftan bir sey alacak olsaydik resultSeti kullanirdik
+        //olusturdugumuz tabloyu gormek icin console-->connection yapariz
+        //tabloyu bir kere olusturduktan sonra orayi yoruma aliriz cunku ikinci kez calistirdigimizda error verir
         //String sql01 = "create table urunler (id int, isim varchar(10), fiyat int)";
         //st.execute(sql01);  //--> bu bilgileri database'imize gonderecegiz ResultSet kullanmiyoruz cunku karsidan data istemeyip data cekiyoruz
 
+        //tanimladigim urunlerden bir liste olusturacagim
+        //olusturdugum list az once tanimladigim urunler listesinden olusturulacaktir
         List<Urun> kayitlar = new ArrayList<>();
-        kayitlar.add(new Urun(100, "Laptop", 35000));
+        kayitlar.add(new Urun(100, "Laptop", 35000));//kayitlar listesine urun ekle
         kayitlar.add(new Urun(101, "IPad", 25000));
         kayitlar.add(new Urun(102, "MacBook", 55000));
         kayitlar.add(new Urun(103, "AnaKart", 15000));
